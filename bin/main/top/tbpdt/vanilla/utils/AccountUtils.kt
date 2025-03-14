@@ -411,11 +411,11 @@ object AccountUtils {
 
     fun querySignRank(): List<Account> {
         val query = """
-            SELECT user_id, user_nick, total_sign_days, encounter_date, last_sign_date, money, experience 
-            FROM accounts 
-            ORDER BY total_sign_days DESC 
-            LIMIT 5
-        """
+        SELECT user_id, user_nick, total_sign_days, encounter_date, last_sign_date, money, experience 
+        FROM accounts 
+        ORDER BY total_sign_days DESC 
+        LIMIT 5
+    """
 
         DBUtils.connectToDB().use { connection ->
             connection.prepareStatement(query).use { preparedStatement ->
